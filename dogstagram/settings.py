@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-shellym96-dogstagram-xqfniylx2ut.ws-eu105.gitpod.io', 'https://dog-stagram-23b178208419.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['https://dog-stagram-23b178208419.herokuapp.com', '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu105.gitpod.io']
 
 
 # Application definition
