@@ -1,1 +1,1 @@
-web: gunicorn dogblog.wsgi
+web: gunicorn dogstagram.wsgi
