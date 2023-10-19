@@ -6,23 +6,131 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
 
-class Post(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
-    updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManytoManyField(User, related_name='blog_likes', blank=True)
+class Dog(models.Model):
+    """models for dog"""
+    name = models.CharField(
+        blank=True,
+        null=True,
+        max_length=30,
+        unique=False)
 
-    class Meta:
-        ordering = ['-created_on']
+    owner = models.ForeignKey(
+        User,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        default=1,
+        max_length=30,
+        verbose_name='Owner',
+        unique=False)
 
-    def __str__(self):
-        return self.title
+    breed = models.CharField(
+        blank=True,
+        null=True,
+        max_length=30,
+        unique=False)
 
-    def number_of_likes(self):
-        return self.likes.count()
+    dob = models.DateField(
+        blank=True,
+        null=True,
+        verbose_name='DOB')
+
+
+class User(models.Model):
+    """models for user"""
+    username = models.CharField(
+        blank=True,
+        null=True,
+        max_length=8,
+        unique=True,
+        verbose_name=' Username '
+    )
+
+    email = models.CharField(
+        blank=True,
+        null=True,
+        max_length=20,
+        unique=False,
+        verbose_name='Email'
+    )
+
+
+class LikePhoto(models.Model):
+    """models for like photo"""
+    person = models.ForeignKey(
+        User,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        default=1,
+        verbose_name='Person'
+    )
+
+    dog_photo = models.ForeignKey(
+        User,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        default=1,
+        verbose_name='Dog Photo'
+    )
+
+    create_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Created At'
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name='Updated At'
+    )
+    
+
+class DogPhoto(models.Model):
+    """models for dog photo"""
+    dog = models.ForeignKey(
+        Dog,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        default=1
+    )
+
+    """ ALT HERE """
+
+    image = models.ImageField(
+        upload_to='dog_photo',
+        default='default.jpg',
+        verbose_name='Image'
+    )
+
+    create_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Created At'
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name='Updated At'
+    )
+    
+    competition = models.ForeignKey(
+        DogPhoto,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        default=1,
+        verbose_name='Competition'
+    )
+
+class Competition(models.Model):
+    name = models.CharField(
+        DogPhoto,
+        blank=True,
+        null=True,
+        max_length=15,
+        verbose_name='Name',
+        unique=True
+    )
+
+    created_at
