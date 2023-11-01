@@ -30,6 +30,9 @@ class Dog(models.Model):
         null=True,
         verbose_name='Date Of Birth'
         )
+    
+    def __str__(self):
+        return self.name
 
 
 class Competition(models.Model):
@@ -42,6 +45,9 @@ class Competition(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True
     )
+
+    def __str__(self):
+        return self.name
 
 
 class DogPhoto(models.Model):
@@ -71,6 +77,8 @@ class DogPhoto(models.Model):
         on_delete=models.CASCADE
     )
 
+    def __str__(self):
+        return self.dog.name
 
 class LikePhoto(models.Model):
     """models for like photo"""
@@ -91,3 +99,6 @@ class LikePhoto(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True
     )
+
+    def __str__(self):
+        return self.dog_photo.dog.name
