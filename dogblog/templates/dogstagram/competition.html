@@ -1,9 +1,48 @@
 {% extends 'dogstagram/main.html' %}
+{% load static %}
 
 {% block content %}
-{% include 'dogstagram/navbar.html' %}
 
 <br/>
-<h3> Join in on our competition to be in the chance to win some prizes! </h3>
+<div class="container text-center">
+<h3> Pup of October! </h3>
+<img src="{% static 'octoberpup.jpg' %}">
+</div>
+<br/>
+<div class="container text-center">
+    <p> 
+        To vote for your favourite picture of the cutest dog for the month of November,
+        all you have to do is click the heart to like the image and the picture with the 
+        most hearts at the end of the month will win our doggy hamper!
+        <br/>
+        Good Luck ! 
+    </p>
+    <img src="{% static 'octoberpup.jpg' %}" alt="users image">
+    <img src="{% static 'octoberpup.jpg' %}" alt="users image">
+    <img src="{% static 'octoberpup.jpg' %}" alt="users image">
+
+</div>
+
+<div class="container text-center">
+
+    <img src="{% static 'octoberpup.jpg' %}" alt="users image">
+    <img src="{% static 'octoberpup.jpg' %}" alt="users image">
+    <img src="{% static 'octoberpup.jpg' %}" alt="users image">
+
+</div>
+
+<div class="container text-center">
+
+    <img src="{% static 'octoberpup.jpg' %}" alt="users image">
+    <img src="{% static 'octoberpup.jpg' %}" alt="users image">
+    <img src="{% static 'octoberpup.jpg' %}" alt="users image">
+    
+</div>
+
+<div class="container text-left">
+    <p>
+        Winner will be contacted on the last day of the month via direct message.
+    </p>
+</div>
     
 {% endblock %}
