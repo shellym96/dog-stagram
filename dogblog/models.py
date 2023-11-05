@@ -64,6 +64,14 @@ class DogPhoto(models.Model):
         null=False
     )
 
+    image = models.ImageField(
+        'image',
+        default='default',
+        blank=False,
+        null=False,
+        upload_to = 'images/'
+    )
+
     created_at = models.DateTimeField(
         auto_now_add=True
     )
