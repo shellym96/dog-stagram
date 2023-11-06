@@ -6,5 +6,6 @@ urlpatterns = [
     path('photos/', views.photos, name='photos'),
     path('competition/', views.competition, name='competition'),
     path('accounts/', include('allauth.urls')),
+    path('like/<slug:slug>', views.LikePhoto.as_view(), name='post_like'),
     
 ]
