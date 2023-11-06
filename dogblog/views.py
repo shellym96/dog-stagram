@@ -31,8 +31,6 @@ class LikePhoto(View):
             post.likes.add(request.user)
         
         return HttpResponseRedirect(reverse('competition', args=[slug]))
-
-
         
 
 
