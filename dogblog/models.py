@@ -100,6 +100,12 @@ class LikePhoto(models.Model):
         on_delete=models.CASCADE
     )
 
+    likes = models.ManyToManyField(
+        User,
+        related_name='blog_posts',
+        blank=True
+    )
+
     created_at = models.DateTimeField(
         auto_now_add=True
     )
