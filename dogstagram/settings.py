@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dog-stagram-23b178208419.herokuapp.com', '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['dog-stagram-23b178208419.herokuapp.com', '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu105.gitpod.io', '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu106.gitpod.io']
 
 
 # Application definition
@@ -58,6 +58,7 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
