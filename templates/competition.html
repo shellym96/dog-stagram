@@ -25,6 +25,35 @@
             <br>
             <img src="{{ photo.image.url }}" alt="{{ photo.dog.name }}" class="img-fluid">
         </div>
+        <div class="row">
+
+            <div class="col-1">
+                <strong>
+                    {% if user.is_authenticated %}
+                    <form class="d-inline" action="{% url 'photo_like' photo.id %}" method="POST">
+        
+                        {% csrf_token %}
+                        {% if liked %}
+        
+                            <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="fas fa-heart"></i></button>
+        
+                        {% else %}
+        
+                            <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="far fa-heart"></i></button>
+        
+                        {% endif %}
+                    </form>
+        
+                    {% else %}
+        
+                    <span class="text-secondary"><i class="far fa-heart"></i></span>
+        
+                    {% endif %}
+        
+                    <span class="text-secondary">{{ photo.number_of_likes }} </span>
+                </strong>
+            </div>
+        </div>
         {% endfor %}
     </div>
     <p> 
@@ -55,34 +84,7 @@
     <img src="{% static 'octoberpup.jpg' %}" alt="users image">
     
 </div>
-<div class="row">
 
-    <div class="col-1">
-        <strong>
-            {% if user.is_authenticated %}
-            <form class="d-inline" action="{% url 'competition' post.slug %}" method="POST">
-                
-                {% csrf_token %}
-                {% if liked %}
-                
-                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
-                
-                {% else %}
-
-                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
-                
-                {% endif %}
-            </form>
-
-            {% else %}
-
-            <span class="text-secondary"><i class="far fa-heart"></i></span>
-            
-            {% endif %}
-
-        <span class="text-secondary">{{ post.number_of_likes }} </span>
-        </strong>
-    </div>
 <div class="container text-left">
     <p>
         Winner will be contacted on the last day of the month via direct message.
