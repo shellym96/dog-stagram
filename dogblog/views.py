@@ -11,6 +11,14 @@ def home(request):
 def photos(request):
     return render(request, 'photos.html')
 
+def add_photo(request):
+    if request.method == "POST":
+        name = request.POST.get('photo_name')
+        Item.objects.create(name=name)
+
+    return render(request, 'templates/competition.html')
+
+
 def competition(request):
     competitions = Competition.objects.all()
     photos = DogPhoto.objects.all()
@@ -31,3 +39,6 @@ class LikeDogPhoto(View):
             photo.likes.add(request.user)
         
         return HttpResponseRedirect(reverse('competition'))
+
+
+
