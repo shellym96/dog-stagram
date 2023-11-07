@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald&display=swap");
+
+body > footer {
+    position: sticky;
+    top: 100vh;
+  }
+
+body {
+    font-family: forum;
+    font-size: 25px;
+    background-color: #fff1f5 !important;
+  }
+
+#homepage {
+    color: blueviolet;
+}
