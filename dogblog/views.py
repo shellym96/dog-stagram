@@ -21,18 +21,13 @@ def competition(request):
     return render(request, 'competition.html', context)
 
 
-class PostLike(View):
-    def post(self, request, slug):
-        post = get_object_or_404(Post, slug=slug)
+class LikeDogPhoto(View):
+    def post(self, request, id):
+        photo = get_object_or_404(DogPhoto, id=id)
 
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
+        if photo.likes.filter(id=request.user.id).exists():
+            photo.likes.remove(request.user)
         else:
-            post.likes.add(request.user)
+            photo.likes.add(request.user)
         
-        return HttpResponseRedirect(reverse('competition', args=[slug]))
-        
-
-
-
-
+        return HttpResponseRedirect(reverse('competition'))
