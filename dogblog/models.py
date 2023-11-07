@@ -64,12 +64,9 @@ class DogPhoto(models.Model):
         null=False
     )
 
-    image = models.ImageField(
-        'image',
-        default='default',
-        blank=False,
-        null=False,
-        upload_to = 'images/'
+    likes = models.ManyToManyField(
+        User,
+        blank=True
     )
 
     created_at = models.DateTimeField(
@@ -98,12 +95,6 @@ class LikePhoto(models.Model):
     dog_photo = models.ForeignKey(
         DogPhoto,
         on_delete=models.CASCADE
-    )
-
-    likes = models.ManyToManyField(
-        User,
-        related_name='blog_posts',
-        blank=True
     )
 
     created_at = models.DateTimeField(
