@@ -21,7 +21,7 @@ def competition(request):
     return render(request, 'competition.html', context)
 
 
-class LikePhoto(View):
+class PostLike(View):
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
