@@ -1,6 +1,7 @@
 from django.urls import path, include
 from . import views
 from .views import home, photos, competition, add_photo
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('photos/', views.photos, name='photos'),
