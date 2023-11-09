@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .models import Dog, Competition, DogPhoto, LikePhoto
+from .forms import DogPhotoForm
 
 # Create your views here.
 def home(request):
@@ -16,7 +17,13 @@ def add_photo(request):
         name = request.POST.get('photo_name')
         Item.objects.create(name=name)
 
-    return render(request, 'templates/competition.html')
+    return render(
+        request,
+        'templates/competition.html',
+        {
+            "comment_form": DogPhotoForm()
+        },
+    )
 
 
 def competition(request):
