@@ -7,10 +7,25 @@ body > footer {
 
 body {
     font-family: forum;
-    font-size: 25px;
-    background-color: #fff1f5 !important;
+    font-size: 18px;
+    background-color: rgb(209, 182, 235) !important;
   }
 
 #homepage {
-    color: blueviolet;
+    color: rgb(27, 82, 247);
+    text-align: center;
+}
+/* add_photo.html */ 
+h3 {
+  text-align: center;
+}
+
+#select_image {
+  text-align: center;
+  padding-top: 30px;
+}
+
+button {
+  border-radius: 25px;
+
 }
