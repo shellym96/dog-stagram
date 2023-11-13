@@ -18,24 +18,10 @@
         </div>
         {% endfor %}
     </div>
-    {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
-                </div>
-    {% else %}
-                {% if user.is_authenticated %}
-
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-    {% endif %}
-    {% endif %}
-    <div class="row">
+    <div class="col-12 left">
+        <div class="row">
         {% for photo in photos %}
+        
         <div class="row">
             <div class="column">
             {{ photo.dog.name }}
@@ -43,6 +29,7 @@
             <img src="{{ photo.image.url }}" alt="{{ photo.dog.name }}" class="img-fluid" style="width: 60%;">
             </div>
         </div>
+    </div>
         <div class="row">
 
             <div class="col-1">
@@ -52,9 +39,9 @@
         
                         {% csrf_token %}
                         {% if liked %}
-        
+                        <div class="alert alert-success" role="alert">
                             <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="fas fa-heart"></i></button>
-        
+                        </div>
                         {% else %}
         
                             <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="far fa-heart"></i></button>
