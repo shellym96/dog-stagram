@@ -18,10 +18,9 @@
         </div>
         {% endfor %}
     </div>
-    <div class="col-12 left">
-        <div class="row">
+    
+    <div class="row">
         {% for photo in photos %}
-        
         <div class="row">
             <div class="column">
             {{ photo.dog.name }}
@@ -29,7 +28,6 @@
             <img src="{{ photo.image.url }}" alt="{{ photo.dog.name }}" class="img-fluid" style="width: 60%;">
             </div>
         </div>
-    </div>
         <div class="row">
 
             <div class="col-1">
@@ -39,9 +37,9 @@
         
                         {% csrf_token %}
                         {% if liked %}
-                        <div class="alert alert-success" role="alert">
+        
                             <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="fas fa-heart"></i></button>
-                        </div>
+        
                         {% else %}
         
                             <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="far fa-heart"></i></button>
