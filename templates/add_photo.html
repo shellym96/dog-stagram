@@ -6,27 +6,9 @@
 
 <form id="select_image" method="POST" action="{% url 'add_photo' %}" enctype='multipart/form-data'>
     {% csrf_token %}
-    <div>
-        <p>
-            <label for="dog">Select Dog:</label>
-            <select name="dog" id="id_dog">
-                {% for dog in dogs %}
-                    <option value="{{ dog.id }}">{{ dog.name }}</option>
-                {% endfor %}
-            </select>
-        </p>
-    </div>
+
     {{ form.as_p }}
-    <div>
-        <p>
-            <label for="competition">Select Competition:</label>
-            <select name="competition" id="id_competition">
-                {% for competition in competitions %}
-                    <option value="{{ competition.id }}">{{ competition.name }}</option>
-                {% endfor %}
-            </select>
-        </p>
-    </div>
+
     <button type="submit">
         Submit
     </button>
