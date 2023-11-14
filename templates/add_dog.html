@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Enter dog information below!</h3>
+
+
+<form id="select_image" method="POST" action="{% url 'add_dog' %}">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Submit
+    </button>
+</form>
+    
+{% endblock %}
