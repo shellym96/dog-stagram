@@ -11,50 +11,30 @@
 <br/>
 <div class="container text-center">
     <h4>Vote for the pup you think should win cutest pup of the month!</h4>
-    <div class="row">
-        {% for competition in competitions %}
-        <div class="col-12">
-            {{ competition.name }}
-        </div>
-        {% endfor %}
-    </div>
     
     <div class="row">
         {% for photo in photos %}
-        <div class="row">
-            <div class="column">
-            {{ photo.dog.name }}
-            <br>
-            <img src="{{ photo.image.url }}" alt="{{ photo.dog.name }}" class="img-fluid" style="width: 60%;">
-            </div>
-        </div>
-        <div class="row">
-
-            <div class="col-1">
-                <strong>
-                    {% if user.is_authenticated %}
-                    <form class="d-inline" action="{% url 'photo_like' photo.id %}" method="POST">
-        
+        <div class="col-12 col-md-6 col-lg-4 card">
+            <img src="{{ photo.image.url }}" alt="{{ photo.dog.name }}" class="img-fluid card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ photo.dog.name }}</h5>
+                <p class="card-text">
+                    Vote for {{ photo.dog.name }}
+                </p>
+                {% if user.is_authenticated %}
+                    <form action="{% url 'photo_like' photo.id %}" method="POST">
                         {% csrf_token %}
                         {% if liked %}
-        
                             <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="fas fa-heart"></i></button>
-        
                         {% else %}
-        
                             <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="far fa-heart"></i></button>
-        
                         {% endif %}
                     </form>
-        
-                    {% else %}
-        
+                {% else %}
+                    <small>You must log in to vote in the competition!</small>
                     <span class="text-secondary"><i class="far fa-heart"></i></span>
-        
-                    {% endif %}
-        
-                    <span class="text-secondary">{{ photo.number_of_likes }} </span>
-                </strong>
+                {% endif %}
+                <span class="text-secondary">{{ photo.number_of_likes }} </span>
             </div>
         </div>
         {% endfor %}
