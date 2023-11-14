@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .models import Dog, Competition, DogPhoto, LikePhoto
-from .forms import DogPhotoForm
+from .forms import DogPhotoForm, DogForm
 
 # Create your views here.
 def home(request):
@@ -14,31 +14,23 @@ def photos(request):
 
 def add_photo(request):
     if request.method == 'POST':
-        dog_id = request.POST.get('dog')
-        competition_id = request.POST.get('competition')
         form = DogPhotoForm(request.POST, request.FILES)
-        print(request.FILES)
-        dog = get_object_or_404(Dog, id=dog_id)
-        competition = get_object_or_404(Competition, id=competition_id)
+        form.fields['dog'].queryset = Dog.objects.filter(owner=request.user)
 
         if form.is_valid():
             dog_photo = form.save(commit=False)
-            dog_photo.dog = dog
-            dog_photo.competition = competition
             dog_photo.save()
 
             return HttpResponseRedirect(reverse('competition'))
 
     else:
         form = DogPhotoForm()
+        form.fields['dog'].queryset = Dog.objects.filter(owner=request.user)
 
-    # Fetch dogs and competitions to pass to the template
-    dogs = Dog.objects.all()
-    print("dogs", dogs)
-    competitions = Competition.objects.all()
-    print("competitions", competitions)
-
-    return render(request, 'add_photo.html', {'form': form, 'dogs': dogs, 'competitions': competitions})
+    context = {
+        'form': form,
+    }
+    return render(request, 'add_photo.html', context)
 
 
 def competition(request):
@@ -62,5 +54,21 @@ class LikeDogPhoto(View):
         
         return HttpResponseRedirect(reverse('competition'))
 
+
+def add_dog(request):
+    form = DogForm(request.POST or None)
+    if request.method == 'POST':
+
+        if form.is_valid():
+            dog = form.save(commit=False)
+            dog.owner = request.user
+            dog.save()
+
+            return HttpResponseRedirect(reverse('home'))
+    context = {
+        "form": form,
+    }
+
+    return render(request, 'add_dog.html', context)
 
 
