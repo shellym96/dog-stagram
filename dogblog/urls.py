@@ -1,11 +1,11 @@
 from django.urls import path, include
 from . import views
-from .views import home, photos, competition, add_photo
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('competition/', views.competition, name='competition'),
     path('accounts/', include('allauth.urls')),
     path('like/<int:id>', views.LikeDogPhoto.as_view(), name='photo_like'),
-    path('add_photo', add_photo, name='add_photo')
+    path('add_photo', views.add_photo, name='add_photo'),
+    path('add_dog', views.add_dog, name='add_dog')
 ]
