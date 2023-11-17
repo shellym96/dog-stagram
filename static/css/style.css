@@ -48,7 +48,7 @@ footer {
   width: 100%;
   height: 105px;
   text-align: center;
-  background-color: rgb(242, 204, 155);
+  background-color: rgb(235, 214, 182);
 }
 
 /* social media links */
@@ -85,7 +85,7 @@ h3 {
 .card-img-top {
   object-fit: cover;
   width: 100%;
-  height: 40%;
+  max-height: 25vh;
 }
 
 /* #select_image {
