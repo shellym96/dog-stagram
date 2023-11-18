@@ -7,5 +7,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('like/<int:id>', views.LikeDogPhoto.as_view(), name='photo_like'),
     path('add_photo', views.add_photo, name='add_photo'),
-    path('add_dog', views.add_dog, name='add_dog')
+    path('add_dog', views.add_dog, name='add_dog'),
+    path('edit/<item_id>', views.edit_item, name='edit_item'),
 ]
