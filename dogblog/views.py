@@ -43,6 +43,20 @@ def competition(request):
     return render(request, 'competition.html', context)
 
 
+def edit_photo(request, photo_id):
+    photo = get_object_or_404(DogPhoto, id=photo_id)
+    if request.method == 'POST':
+        form = DogPhotoForm(request.POST, request.FILES, instance=photo)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('competition'))
+    form = DogPhotoForm(instance=photo)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_photo.html', context)
+
+
 class LikeDogPhoto(View):
     def post(self, request, id):
         photo = get_object_or_404(DogPhoto, id=id)
@@ -72,16 +86,5 @@ def add_dog(request):
     return render(request, 'add_dog.html', context)
 
 
-def edit_item(request, item_id):
-    item = get_object_or_404(Item, id=item_id)
-    if request.method == 'POST':
-        form = ItemForm(request.POST, instance=item)
-        if form.is_valid():
-            form.save()
-            return redirect('add_dog.html')
-    form = ItemForm(instance=item)
-    context = {
-        'form': form
-    }
-    return render(request, 'edit_item.html', context)
+
 
