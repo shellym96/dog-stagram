@@ -4,7 +4,7 @@
 
 
 <h3>Edit</h3>
-<form id="select_image" method="POST">
+<form id="select_image" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
 
     {{ form.as_p }}
