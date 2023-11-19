@@ -4,11 +4,12 @@
 
 {% block content %}
 
+<!-- 
 <br/>
 <div class="container text-center">
 <img src="{{ photo.image.url }}" alt="{{ photo.dog.name }}" class="img-fluid">
 </div>
-<br/>
+<br/> -->
 <div class="container text-center">
     <h4>Vote for the pup you think should win cutest pup of the month!</h4>
     
@@ -30,6 +31,11 @@
                             <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="far fa-heart"></i></button>
                         {% endif %}
                     </form>
+                    <td>
+                        <a href="{% url 'edit_photo' photo.id %}">
+                            <button>Edit</button>
+                        </a>
+                    </td>
                 {% else %}
                     <small>You must log in to vote in the competition!</small>
                     <span class="text-secondary"><i class="far fa-heart"></i></span>
