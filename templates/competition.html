@@ -36,6 +36,11 @@
                             <button>Edit</button>
                         </a>
                     </td>
+                    <td>
+                        <a href="{% url 'delete_photo' photo.id %}">
+                            <button>Delete</button>
+                        </a>
+                    </td>
                 {% else %}
                     <small>You must log in to vote in the competition!</small>
                     <span class="text-secondary"><i class="far fa-heart"></i></span>
