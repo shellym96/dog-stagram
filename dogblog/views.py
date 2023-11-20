@@ -57,6 +57,12 @@ def edit_photo(request, photo_id):
     return render(request, 'edit_photo.html', context)
 
 
+def delete_photo(request, photo_id):
+    photo = get_object_or_404(DogPhoto, id=photo_id)
+    photo.delete()
+    return HttpResponseRedirect(reverse('competition'))
+
+
 class LikeDogPhoto(View):
     def post(self, request, id):
         photo = get_object_or_404(DogPhoto, id=id)
