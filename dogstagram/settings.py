@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", False)
 
 ALLOWED_HOSTS = ['dog-stagram-23b178208419.herokuapp.com', '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu105.gitpod.io', '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu106.gitpod.io']
 
@@ -104,6 +104,7 @@ WSGI_APPLICATION = 'dogstagram.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
+
 DATABASES = {
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
  }
