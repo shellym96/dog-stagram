@@ -14,50 +14,53 @@
             <div class="card card-bg my-3">
                 <img src="{{ photo.image.url }}" alt="{{ photo.dog.name }}" class="img-fluid card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">{{ photo.dog.name }}</h5>
+                    <h5 class="card-title fw-bold">{{ photo.dog.name }}</h5>
                     <p class="card-text">
-                        Vote for {{ photo.dog.name }}
+                        {% if user.is_authenticated %}
+                            Vote for <strong>{{ photo.dog.name }}</strong>
+                        {% endif %}
                     </p>
-                    {% if user.is_authenticated %}
-                        <form action="{% url 'photo_like' photo.id %}" method="POST">
-                            {% csrf_token %}
-                            {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like my-2"><i class="fas fa-heart"></i></button>
-                            {% else %}
-                                <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like my-2"><i class="far fa-heart"></i></button>
-                            {% endif %}
-                        </form>
-                        {% if user == photo.dog.owner %}
-                            <a href="{% url 'edit_photo' photo.id %}" class="btn btn-outline-secondary btn-sm" role="button">Update
-                            </a>
-                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-bs-toggle="modal" data-bs-target="#modal-delete-{{photo.id}}">Delete
-                            </a>
-                            <div class="modal fade" id="modal-delete-{{photo.id}}" tabindex="-1" aria-labelledby="modal-delete-{{photo.id}}-label" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h1 class="modal-title fs-5" id="modal-delete-{{photo.id}}-label">Delete Photo</h1>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                      Are you sure you want to delete this photo?
-                                      <br>
-                                      <small>This action is permanent and cannot be undone.</small>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
-                                      <a href="{% url 'delete_photo' photo.id %}" role="button" class="btn btn-danger">Yes</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            {% endif %}
-                    {% else %}
-                        <small>You must log in to vote in the competition!</small>
-                        <span class="text-secondary"><i class="far fa-heart"></i></span>
-                    {% endif %}
                     <span class="text-secondary">{{ photo.number_of_likes }} </span>
                 </div>
+                {% if user.is_authenticated %}
+                    <div class="card-footer text-body-secondary">
+                        <!-- edit / delete only for the authorised user of this dog photo -->
+                        {% if user == photo.dog.owner %}
+                            <a href="{% url 'edit_photo' photo.id %}" class="btn btn-outline-secondary btn-sm" role="button">Update</a>
+                            <a href="#" class="btn btn-outline-danger btn-sm" role="button" data-bs-toggle="modal" data-bs-target="#modal-delete-{{photo.id}}">Delete</a>
+                            <!-- delete photo modal -->
+                            <div class="modal fade" id="modal-delete-{{photo.id}}" tabindex="-1" aria-labelledby="modal-delete-{{photo.id}}-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modal-delete-{{photo.id}}-label">Delete Photo</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this photo?
+                                            <br>
+                                            <small>This action is permanent and cannot be undone.</small>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
+                                            <a href="{% url 'delete_photo' photo.id %}" role="button" class="btn btn-danger">Yes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <!-- not the dog owner, but can still like the photo -->
+                            <form action="{% url 'photo_like' photo.id %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                    <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                {% else %}
+                                    <button type="submit" name="blogpost_id" value="{{photo.id}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
