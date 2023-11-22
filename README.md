@@ -196,118 +196,33 @@ For future features I would like to have more style added to the site overall.  
     - 
 ![screenshot](documentation/erd.png)
 
-```
-from django.db import models
-from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
-
-
-STATUS = ((0, 'Draft'), (1, 'Published'))
-
-
+```python
 class Dog(models.Model):
     """models for dog"""
-    name = models.CharField(
-        blank=False,
-        null=False,
-        max_length=30
-        )
-
-    owner = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE
-        )
-
-    breed = models.CharField(
-        blank=True,
-        null=True,
-        max_length=30
-        )
-
-    dob = models.DateField(
-        blank=True,
-        null=True,
-        verbose_name='Date Of Birth'
-        )
-
-    def __str__(self):
-        return self.name
-
+    name = models.CharField()
+    owner = models.ForeignKey(User)
+    breed = models.CharField()
+    dob = models.DateField()
 
 class Competition(models.Model):
-    name = models.CharField(
-        blank=False,
-        null=False,
-        max_length=50
-    )
-
-    created_at = models.DateTimeField(
-        auto_now_add=True
-    )
-
-    def __str__(self):
-        return self.name
-
+    name = models.CharField()
+    created_at = models.DateTimeField()
 
 class DogPhoto(models.Model):
     """models for dog photo"""
-    dog = models.ForeignKey(
-        Dog,
-        on_delete=models.CASCADE
-    )
-
-    image = CloudinaryField(
-        'image',
-        default='default',
-        blank=False,
-        null=False
-    )
-
-    likes = models.ManyToManyField(
-        User,
-        blank=True
-    )
-
-    created_at = models.DateTimeField(
-        auto_now_add=True
-    )
-
-    updated_at = models.DateTimeField(
-        auto_now=True
-    )
-
-    competition = models.ForeignKey(
-        Competition,
-        on_delete=models.CASCADE
-    )
-
-    def __str__(self):
-        return self.dog.name
-
+    dog = models.ForeignKey(Dog)
+    image = CloudinaryField()
+    likes = models.ManyToManyField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+    competition = models.ForeignKey(Competition)
 
 class LikePhoto(models.Model):
     """models for like photo"""
-    person = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE
-    )
-
-    dog_photo = models.ForeignKey(
-        DogPhoto,
-        on_delete=models.CASCADE
-    )
-
-    created_at = models.DateTimeField(
-        auto_now_add=True
-    )
-
-    updated_at = models.DateTimeField(
-        auto_now=True
-    )
-
-    def __str__(self):
-        return self.dog_photo.dog.name
-
+    person = models.ForeignKey(User)
+    dog_photo = models.ForeignKey(DogPhoto)
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
 ```
 
 ## Agile Development Process
