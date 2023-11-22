@@ -6,18 +6,18 @@
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-| Page | W3C URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| Home | ![screenshot](documentation/html-validation-home.png) |Pass: No Errors |
+| Page | Screenshot | Notes |
+| --- | --- | --- |
+| Home | ![screenshot](documentation/html-validation-home.png) | Pass: No Errors |
 | Add Dog | ![screenshot](documentation/html-validation-add-dog.png) | Pass: No Errors |
 | Add Photo | ![screenshot](documentation/html-validation-add-dog-photo.png) | Pass: No Errors |
 | Competition | ![screenshot](documentation/html-validation-comp.png) | Pass: no Errors |
 
 ### CSS
 
-| File | Jigsaw URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator) | ![screenshot](documentation/css-validation-style.png) | Pass: No Errors |
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| style.css | ![screenshot](documentation/css-validation-style.png) | Pass: No Errors |
 
 ### JavaScript
 
@@ -32,10 +32,11 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
 | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/manage.py) | ![screenshot](documentation/manage-py.png) | No Errors |
-| admin.py | [PEP8 CI]() | ![screenshot](documentation/admin-py.png) | No Errors |
-| apps.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/apps-py.png) | No Errors |
-| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/forms-py.png) | No Errors |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/admin.py) | ![screenshot](documentation/admin-py.png) | No Errors |
+| apps.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/apps.py) | ![screenshot](documentation/apps-py.png) | No Errors |
+| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/forms.py) | ![screenshot](documentation/forms-py.png) | No Errors |
 | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogstagram/urls.py) | ![screenshot](documentation/urls-py.png) | No Errors |
+| urls.py | [P£P8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/urls.py) | ![screenshot](documentation/urls-main.png) | No Errors |
 | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/views-py.png) | No Errors |
 | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/models-py.png) | No Errors |
 
@@ -69,6 +70,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | add dog | ![screenshot](documentation/lighthouse-mobile-add-dog.png) | ![screenshot](documentation/lighthouse-desktop-add-dog.png) | Works well |
 | Add photo | ![screenshot](documentation/lighthouse-mobile-add-photo.png) | ![screenshot](documentation/lighthouse-desktop-add-photo.png) | Works well |
 | Competition | ![screenshot](documentation/lighthouse-mobile-comp.png) | ![screenshot](documentation/lighthouse-desktop-comp.png) | Works well |
+| Update | ![screenshot](documentation/lighthouse-mobile-update.png) | ![screenshot](documentation/lighthouse-desktop-update.png) | Works well |
 
 ## Defensive Programming
 
