@@ -8,10 +8,10 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | [W3C](https://validator.w3.org/nu/#textarea) | ![screenshot](documentation/html-validation-home.png) |Pass: No Errors |
-| Add Dog | [W3C](https://validator.w3.org/nu/#textarea) | ![screenshot](documentation/html-validation-add-dog.png) | Pass: No Errors |
-| Add Photo | [W3C](https://validator.w3.org/nu/#textarea) | ![screenshot](documentation/html-validation-add-dog-photo.png) | Pass: No Errors |
-| Competition | [W3C](https://validator.w3.org/nu/#textarea)| ![screenshot](documentation/html-validation-comp.png) | Pass: no Errors |
+| Home | ![screenshot](documentation/html-validation-home.png) |Pass: No Errors |
+| Add Dog | ![screenshot](documentation/html-validation-add-dog.png) | Pass: No Errors |
+| Add Photo | ![screenshot](documentation/html-validation-add-dog-photo.png) | Pass: No Errors |
+| Competition | ![screenshot](documentation/html-validation-comp.png) | Pass: no Errors |
 
 ### CSS
 
@@ -31,11 +31,11 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/manage-py.png) | No Errors |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/admin-py.png) | No Errors |
+| manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/manage.py) | ![screenshot](documentation/manage-py.png) | No Errors |
+| admin.py | [PEP8 CI]() | ![screenshot](documentation/admin-py.png) | No Errors |
 | apps.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/apps-py.png) | No Errors |
 | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/forms-py.png) | No Errors |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/urls-py.png) | No Errors |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogstagram/urls.py) | ![screenshot](documentation/urls-py.png) | No Errors |
 | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/views-py.png) | No Errors |
 | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/models-py.png) | No Errors |
 
@@ -43,11 +43,11 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-| Browser | Home | About | Contact | etc | Notes |
+| Browser | Home | Add dog | Add photo | Competition | Notes |
 | --- | --- | --- | --- | --- | --- |
-| ![Firefox](https://raw.githubusercontent.com/TravelTimN/markdown-builder/main/assets/img/firefox.png) | ![screenshot](documentation/firefox-browser-home.png) | ![screenshot](documentation/firefox-browser-add-dog.png) | ![screenshot](documentation/firefox-browser-add-photo.png) | ![screenshot](documentation/firefox-browser-comp.png) | Works as expected |
-| ![Safari](https://raw.githubusercontent.com/TravelTimN/markdown-builder/main/assets/img/safari.png) | ![screenshot](documentation/safari-browser-home.png) | ![screenshot](documentation/safari-browser-add-dog.png) | ![screenshot](documentation/safari-browser-add-photo.png) | ![screenshot](documentation/safari-browser-comp.png) | Minor CSS differences |
-| ![Opera](https://raw.githubusercontent.com/TravelTimN/markdown-builder/main/assets/img/opera.png) | ![screenshot](documentation/opera-browser-home.png) | ![screenshot](documentation/opera-browser-add-dog.png) | ![screenshot](documentation/opera-browser-add-photo.png) | ![screenshot](documentation/opera-browser-comp.png) | Worked as expected |
+| ![Firefox]| ![screenshot](documentation/firefox-browser-home.png) | ![screenshot](documentation/firefox-browser-add-dog.png) | ![screenshot](documentation/firefox-browser-add-photo.png) | ![screenshot](documentation/firefox-browser-comp.png) | Works as expected |
+| ![Safari]| ![screenshot](documentation/safari-browser-home.png) | ![screenshot](documentation/safari-browser-add-dog.png) | ![screenshot](documentation/safari-browser-add-photo.png) | ![screenshot](documentation/safari-browser-comp.png) | Minor CSS differences |
+| ![Opera]| ![screenshot](documentation/opera-browser-home.png) | ![screenshot](documentation/opera-browser-add-dog.png) | ![screenshot](documentation/opera-browser-add-photo.png) | ![screenshot](documentation/opera-browser-comp.png) | Worked as expected |
 
 ## Responsiveness
 
@@ -68,7 +68,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Home | ![screenshot](documentation/lighthouse-mobile-home.png) | ![screenshot](documentation/lighthouse-desktop-home.png) | Some minor warnings |
 | add dog | ![screenshot](documentation/lighthouse-mobile-add-dog.png) | ![screenshot](documentation/lighthouse-desktop-add-dog.png) | Works well |
 | Add photo | ![screenshot](documentation/lighthouse-mobile-add-photo.png) | ![screenshot](documentation/lighthouse-desktop-add-photo.png) | Works well |
-| Competition | ![screenshot](documentation/lighthouse-mobile-comp.png) | ![screenshot](documentation/lighthouse-desktop-comp.png) | Works well ||
+| Competition | ![screenshot](documentation/lighthouse-mobile-comp.png) | ![screenshot](documentation/lighthouse-desktop-comp.png) | Works well |
 
 ## Defensive Programming
 
@@ -101,16 +101,16 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | User Story | Screenshot |
 | --- | --- |
-|As a new site user, I would like to be informed straight away, so that I can know exactly what the site is for.. | ![screenshot](documentation/feature-001.png) |
-|As a new site user, I would like all of the pages in one obvious section, so that I can work my way around the site easily. | ![screenshot](documentation/feature-002.png) |
-|As a new site user, I would like to have the option to edit/update/delete, so that I can update/delete the photo.. | ![screenshot](documentation/feature-003.png) |
-|As a new site user, I would like to be given a message to ensure the image is the one I want to delete, incase of mistakeingly pressed the button. | ![screenshot](documentation/feature-004.png) |
+As a new site user, I would like to be informed straight away, so that I can know exactly what the site is for.. | ![screenshot](documentation/feature-001.png) |
+As a new site user, I would like all of the pages in one obvious section, so that I can work my way around the site easily. | ![screenshot](documentation/feature-002.png) |
+As a new site user, I would like to have the option to edit/update/delete, so that I can update/delete the photo.. | ![screenshot](documentation/feature-003.png) |
+As a new site user, I would like to be given a message to ensure the image is the one I want to delete, incase of mistakeingly pressed the button. | ![screenshot](documentation/feature-004.png) |
 
-|As a returning site user, I would like to have the option of adding another dog to the competition, so that if I got another pet I can add them too. | ![screenshot](documentation/feature-005.png) |
-| As a returning site user, I would like the site to remain the same layout, so that I can move around the site as I had previously.
+As a returning site user, I would like to have the option of adding another dog to the competition, so that if I got another pet I can add them too. | ![screenshot](documentation/feature-005.png) |
+As a returning site user, I would like the site to remain the same layout, so that I can move around the site as I had previously.
 
-| As a site administrator, I should be able to see what users post, so that I can delete from admin page if called for. | ![screenshot](documentation/feature-006.png) |
-|As a site administrator, I should be able to an eye on all that is uploaded, so that I can ensure a safe environment for users| ![screenshot](documentation/feature07.png) |
+As a site administrator, I should be able to see what users post, so that I can delete from admin page if called for. | ![screenshot](documentation/feature-006.png) |
+As a site administrator, I should be able to an eye on all that is uploaded, so that I can ensure a safe environment for users| ![screenshot](documentation/feature07.png) |
 
 
 ## Bugs
