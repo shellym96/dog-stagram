@@ -94,7 +94,7 @@ class LikeDogPhoto(View):
         else:
             photo.likes.add(request.user)
             messages.info(self.request, f"You liked {photo.dog.name}'s photo")
-        
+
         return HttpResponseRedirect(reverse('competition'))
 
 
