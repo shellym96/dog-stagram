@@ -42,10 +42,8 @@ def add_photo(request):
 
 
 def competition(request):
-    competitions = Competition.objects.all()
-    photos = DogPhoto.objects.all()
+    photos = DogPhoto.objects.all().order_by('competition')
     context = {
-        'competitions': competitions,
         'photos': photos,
     }
     return render(request, 'competition.html', context)
