@@ -36,9 +36,9 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | apps.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/apps.py) | ![screenshot](documentation/apps-py.png) | No Errors |
 | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/forms.py) | ![screenshot](documentation/forms-py.png) | No Errors |
 | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogstagram/urls.py) | ![screenshot](documentation/urls-py.png) | No Errors |
-| urls.py | [P£P8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/urls.py) | ![screenshot](documentation/urls-main.png) | No Errors |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/views-py.png) | No Errors |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/run.py) | ![screenshot](documentation/models-py.png) | No Errors |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/urls.py) | ![screenshot](documentation/urls-main.png) | No Errors |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/views.py) | ![screenshot](documentation/views-py.png) | No Errors |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/shellym96/dog-stagram/main/dogblog/models.py) | ![screenshot](documentation/models-py.png) | No Errors |
 
 ## Browser Compatibility
 
@@ -46,15 +46,15 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 | Browser | Home | Add dog | Add photo | Competition | Notes |
 | --- | --- | --- | --- | --- | --- |
-| ![Firefox]| ![screenshot](documentation/firefox-browser-home.png) | ![screenshot](documentation/firefox-browser-add-dog.png) | ![screenshot](documentation/firefox-browser-add-photo.png) | ![screenshot](documentation/firefox-browser-comp.png) | Works as expected |
-| ![Safari]| ![screenshot](documentation/safari-browser-home.png) | ![screenshot](documentation/safari-browser-add-dog.png) | ![screenshot](documentation/safari-browser-add-photo.png) | ![screenshot](documentation/safari-browser-comp.png) | Minor CSS differences |
-| ![Opera]| ![screenshot](documentation/opera-browser-home.png) | ![screenshot](documentation/opera-browser-add-dog.png) | ![screenshot](documentation/opera-browser-add-photo.png) | ![screenshot](documentation/opera-browser-comp.png) | Worked as expected |
+| Firefox| ![screenshot](documentation/firefox-browser-home.png) | ![screenshot](documentation/firefox-browser-add-dog.png) | ![screenshot](documentation/firefox-browser-add-photo.png) | ![screenshot](documentation/firefox-browser-comp.png) | Works as expected |
+| Safari| ![screenshot](documentation/safari-browser-home.png) | ![screenshot](documentation/safari-browser-add-dog.png) | ![screenshot](documentation/safari-browser-add-photo.png) | ![screenshot](documentation/safari-browser-comp.png) | Minor CSS differences |
+| Opera| ![screenshot](documentation/opera-browser-home.png) | ![screenshot](documentation/opera-browser-add-dog.png) | ![screenshot](documentation/opera-browser-add-photo.png) | ![screenshot](documentation/opera-browser-comp.png) | Worked as expected |
 
 ## Responsiveness
 
 I've tested my deployed project on multiple devices to check for responsiveness issues.
 
-| Device | Home | About | Contact | etc | Notes |
+| Device | Home | About | Contact | Competition | Notes |
 | --- | --- | --- | --- | --- | --- |
 | Mobile (DevTools) | ![screenshot](documentation/responsive-mobile-home.png) | ![screenshot](documentation/responsive-mobile-add-dog.png) | ![screenshot](documentation/responsive-mobile-add-photo.png) | ![screenshot](documentation/responsive-mobile-comp.png) | Works as expected |
 | Tablet (DevTools) | ![screenshot](documentation/responsive-tablet-home.png) | ![screenshot](documentation/responsive-tablet-add-dog.png) | ![screenshot](documentation/responsive-tablet-add-photo.png) | ![screenshot](documentation/responsive-tablet-comp.png) | Works as expected |
