@@ -9,6 +9,8 @@ Although I do not have a dog anymore, I stop to rub every single dog I see, I th
 Consider adding a mockup image using the "Am I Responsive" website.
 Here's your deployed site as an example:
 https://ui.dev/amiresponsive?url=https://dog-stagram-23b178208419.herokuapp.com
+![screenshot](documentation/amiresponsive.png)
+
 
 ## UX
 
