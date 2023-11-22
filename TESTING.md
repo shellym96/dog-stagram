@@ -103,21 +103,17 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | User Story | Screenshot |
 | --- | --- |
-As a new site user, I would like to be informed straight away, so that I can know exactly what the site is for.. | ![screenshot](documentation/feature-001.png) |
-As a new site user, I would like all of the pages in one obvious section, so that I can work my way around the site easily. | ![screenshot](documentation/feature-002.png) |
-As a new site user, I would like to have the option to edit/update/delete, so that I can update/delete the photo.. | ![screenshot](documentation/feature-003.png) |
-As a new site user, I would like to be given a message to ensure the image is the one I want to delete, incase of mistakeingly pressed the button. | ![screenshot](documentation/feature-004.png) |
-
-As a returning site user, I would like to have the option of adding another dog to the competition, so that if I got another pet I can add them too. | ![screenshot](documentation/feature-005.png) |
-As a returning site user, I would like the site to remain the same layout, so that I can move around the site as I had previously.
-
-As a site administrator, I should be able to see what users post, so that I can delete from admin page if called for. | ![screenshot](documentation/feature-006.png) |
-As a site administrator, I should be able to an eye on all that is uploaded, so that I can ensure a safe environment for users| ![screenshot](documentation/feature07.png) |
+| As a new site user, I would like to be informed straight away, so that I can know exactly what the site is for.. | ![screenshot](documentation/feature-001.png) |
+| As a new site user, I would like all of the pages in one obvious section, so that I can work my way around the site easily. | ![screenshot](documentation/feature-002.png) |
+| As a new site user, I would like to have the option to edit/update/delete, so that I can update/delete the photo.. | ![screenshot](documentation/feature-003.png) |
+| As a new site user, I would like to be given a message to ensure the image is the one I want to delete, incase of mistakeingly pressed the button. | ![screenshot](documentation/feature-004.png) |
+| As a returning site user, I would like to have the option of adding another dog to the competition, so that if I got another pet I can add them too. | ![screenshot](documentation/feature-005.png) |
+| As a site administrator, I should be able to see what users post, so that I can delete from admin page if called for. | ![screenshot](documentation/feature-006.png) |
 
 
 ## Bugs
 
-Bugs I have had on this project, were not necessarily bugs but more of me having ideas on what I wanted to do and having to find the resources to do it.
+Bugs I have had on this project, were not necessarily bugs, but more of me having ideas on what I wanted to do and having to find the resources to do it.
 
 Making my way through this project was tough, which prompt me to rewatch the hello django and therefore I blog content available for us via Code Institute , and the odd youtube video here and there to gather the knowledge needed to do what I had set in my mind.
 
