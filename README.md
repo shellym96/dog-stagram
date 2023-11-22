@@ -6,9 +6,6 @@ A website I thought in real life would be a fun thing for people who love dogs t
 Almost that if this was a real life website, people would actually take part, and enjoy being part of a group who also shared a love for their pets.
 Although I do not have a dog anymore, I stop to rub every single dog I see, I think it is built into us to love them!
 
-Consider adding a mockup image using the "Am I Responsive" website.
-Here's your deployed site as an example:
-https://ui.dev/amiresponsive?url=https://dog-stagram-23b178208419.herokuapp.com
 ![screenshot](documentation/amiresponsive.png)
 
 
