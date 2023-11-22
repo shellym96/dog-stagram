@@ -30,7 +30,7 @@ class Dog(models.Model):
         null=True,
         verbose_name='Date Of Birth'
         )
-    
+
     def __str__(self):
         return self.name
 
@@ -76,7 +76,7 @@ class DogPhoto(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True
     )
-    
+
     competition = models.ForeignKey(
         Competition,
         on_delete=models.CASCADE
@@ -84,6 +84,7 @@ class DogPhoto(models.Model):
 
     def __str__(self):
         return self.dog.name
+
 
 class LikePhoto(models.Model):
     """models for like photo"""
