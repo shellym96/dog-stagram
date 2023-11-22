@@ -167,12 +167,10 @@ For future features I would like to have more style added to the site overall.  
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
 - [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) used for an enhanced responsive layout.
-- [CSS Grid](https://www.w3schools.com/css/css_grid.asp) used for an enhanced responsive layout.
 - [JavaScript](https://www.javascript.com) used for user interaction on the site.
 - [Python](https://www.python.org) used as the back-end programming language.
 - [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [GitHub](https://github.com) used for secure online code storage.
-- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
 - [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [Django](https://www.djangoproject.com) used as the Python framework for the site.
@@ -183,10 +181,63 @@ For future features I would like to have more style added to the site overall.  
 
 ## Database Design
 
-Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
-Understanding the relationships between different tables can save time later in the project.
+- **ERD**
+    - 
+![screenshot](documentation/ERD.png)
 
 ```
+from django.db import models
+from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+
+
+STATUS = ((0, 'Draft'), (1, 'Published'))
+
+
+class Dog(models.Model):
+    """models for dog"""
+    name = models.CharField(
+        blank=False,
+        null=False,
+        max_length=30
+        )
+
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE
+        )
+
+    breed = models.CharField(
+        blank=True,
+        null=True,
+        max_length=30
+        )
+
+    dob = models.DateField(
+        blank=True,
+        null=True,
+        verbose_name='Date Of Birth'
+        )
+
+    def __str__(self):
+        return self.name
+
+
+class Competition(models.Model):
+    name = models.CharField(
+        blank=False,
+        null=False,
+        max_length=50
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.name
+
+
 class DogPhoto(models.Model):
     """models for dog photo"""
     dog = models.ForeignKey(
@@ -213,7 +264,7 @@ class DogPhoto(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True
     )
-    
+
     competition = models.ForeignKey(
         Competition,
         on_delete=models.CASCADE
@@ -221,17 +272,32 @@ class DogPhoto(models.Model):
 
     def __str__(self):
         return self.dog.name
+
+
+class LikePhoto(models.Model):
+    """models for like photo"""
+    person = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE
+    )
+
+    dog_photo = models.ForeignKey(
+        DogPhoto,
+        on_delete=models.CASCADE
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+
+    def __str__(self):
+        return self.dog_photo.dog.name
+
 ```
-
-- Table: **Product**
-
-    | **PK** | **id** (unique) | Type | Notes |
-    | --- | --- | --- | --- |
-    | **FK** | category | ForeignKey | FK to **Category** model |
-
-    | | name | CharField | |
-    | | image_url | URLField | |
-    | | image | ImageField | |
 
 ## Agile Development Process
 
@@ -422,7 +488,7 @@ You can fork this repository by using the following steps:
 | Source | Location | Type |
 | --- | --- | --- |
 | [Dog day get away](https://dogdaygetaway.com/dog-of-the-month/kona-november-2020-dotm) | competition page | dog image
-| [The Dog Vine](https://thedogvine.com/whats-on-the-november-2017-events-agenda-for-london-dogs/) | hcompetition page | dog image
+| [The Dog Vine](https://thedogvine.com/whats-on-the-november-2017-events-agenda-for-london-dogs/) | competition page | dog image
 | [Dog CLT](https://dogclt.com/events/november-dog-friendly-events-in-charlotte/) | competition page | dog image
 | [Cr family pets](https://crfamilypets.com/dogs/beagles/) | competition page | dog image
 | [Google](https://images.google.com/) | competition page | dog image
