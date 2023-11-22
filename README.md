@@ -6,6 +6,8 @@ A website I thought in real life would be a fun thing for people who love dogs t
 Almost that if this was a real life website, people would actually take part, and enjoy being part of a group who also shared a love for their pets.
 Although I do not have a dog anymore, I stop to rub every single dog I see, I think it is built into us to love them!
 
+
+Amireponsive:
 ![screenshot](documentation/amiresponsive.png)
 
 ## UX
