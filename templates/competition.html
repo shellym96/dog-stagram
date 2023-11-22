@@ -35,7 +35,7 @@
 
         <!-- loop through the competition photos for this month/group -->
         <div class="row">
-            {% for photo in competition.list %}
+            {% for photo in competition.list|dictsort:"dog.name" %}
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-bg my-3">
                     <img src="{{ photo.image.url }}" alt="{{ photo.dog.name }}" class="img-fluid card-img-top">
