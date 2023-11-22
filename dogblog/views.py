@@ -23,8 +23,13 @@ def add_photo(request):
         if form.is_valid():
             dog_photo = form.save(commit=False)
             dog_photo.save()
-
+            messages.success(
+                request,
+                f"{dog_photo.dog.name} has been entered into the "
+                f"{dog_photo.competition} competition! Good Luck!"
+            )
             return HttpResponseRedirect(reverse('competition'))
+        messages.error(request, 'An error has occured. Please try again.')
 
     else:
         form = DogPhotoForm()
@@ -56,7 +61,11 @@ def edit_photo(request, photo_id):
         form.fields['dog'].queryset = Dog.objects.filter(owner=request.user)
         if form.is_valid():
             form.save()
+            messages.success(
+                request, f"Photo of {photo.dog.name} has been updated"
+            )
             return HttpResponseRedirect(reverse('competition'))
+        messages.error(request, 'An error has occured. Please try again.')
     form = DogPhotoForm(instance=photo)
     form.fields['dog'].queryset = Dog.objects.filter(owner=request.user)
     context = {
@@ -71,6 +80,7 @@ def delete_photo(request, photo_id):
         messages.error(request, 'Not Authorised To Perfom This Action!')
         return redirect(reverse('competition'))
     photo.delete()
+    messages.success(request, f"Photo of {photo.dog.name} has been deleted")
     return HttpResponseRedirect(reverse('competition'))
 
 
@@ -80,7 +90,9 @@ class LikeDogPhoto(View):
 
         if photo.likes.filter(id=request.user.id).exists():
             photo.likes.remove(request.user)
-            messages.info(self.request, f"You no longer like {photo.dog.name}'s photo")
+            messages.info(
+                self.request, f"You no longer like {photo.dog.name}'s photo"
+            )
         else:
             photo.likes.add(request.user)
             messages.info(self.request, f"You liked {photo.dog.name}'s photo")
@@ -96,7 +108,7 @@ def add_dog(request):
             dog = form.save(commit=False)
             dog.owner = request.user
             dog.save()
-
+            messages.success(request, f"{dog.name} has been added!")
             return HttpResponseRedirect(reverse('home'))
     context = {
         "form": form,
