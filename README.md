@@ -183,7 +183,7 @@ For future features I would like to have more style added to the site overall.  
 
 - **ERD**
     - 
-![screenshot](documentation/ERD.png)
+![screenshot](documentation/erd.png)
 
 ```
 from django.db import models
