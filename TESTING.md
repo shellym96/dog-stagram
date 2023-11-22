@@ -123,14 +123,21 @@ Making my way through this project was tough, which prompt me to rewatch the hel
 
 There is of course, if I ever came back to this project in the future, to set it up as a social media site, with meet ups for users etc. But that idea is for another day!
 
+#### Bug 1 :
 
-#### Bug 1 :  
-Getting the footer to stay at the bottom of the page, and fixed that with making  the position: sticky; the top: 100vh; and the height of the body 100%;
+Getting the footer to stay at the bottom of the page, and fixed that with making the `position: sticky;` the `top: 100vh;`, and the `height: 100%;` of the body;
 
 #### Bug 2 : 
-When I turned debug off , my CSS was near non existant. I then realized that I had DISABLE_COLLECTSTATIC - 1 still in my config vars. Once I removed that, and reloaded , everything worked perfectly.
 
+When I turned `DEBUG=False`, my CSS was near non-existant. I then realized that I had `DISABLE_COLLECTSTATIC=1` still in my Heroku config vars. Once I removed that, and reloaded, everything worked perfectly.
 
+#### Bug 3 :
+
+Django-Allauth has a known bug with the signup.html template. The unordered list `<ul>` has been added into their form using paragraph tags `<p>`, and this causes a validation error for HTML for having two block elements within each other. I cannot fix this.
+
+![screenshot](documentation/allauth-bug01.png)
+
+![screenshot](documentation/allauth-bug02.png)
 
 ### GitHub **Issues**
 
