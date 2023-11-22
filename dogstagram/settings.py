@@ -31,7 +31,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = ['dog-stagram-23b178208419.herokuapp.com', '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu105.gitpod.io', '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = [
+    'dog-stagram-23b178208419.herokuapp.com',
+    '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu105.gitpod.io',
+    '8000-shellym96-dogstagram-xqfniylx2ut.ws-eu106.gitpod.io'
+]
 
 
 # Application definition
@@ -98,12 +102,12 @@ WSGI_APPLICATION = 'dogstagram.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
-#}
+# }
 
 DATABASES = {
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
@@ -115,16 +119,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', # noqa
+     'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', # noqa
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', # noqa
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', # noqa
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 
@@ -147,7 +151,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  # noqa
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
