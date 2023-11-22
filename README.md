@@ -8,12 +8,12 @@ Although I do not have a dog anymore, I stop to rub every single dog I see, I th
 
 ![screenshot](documentation/amiresponsive.png)
 
-
 ## UX
 
 In choosing the design process for this project, I wanted  to keep it simple. Easy for the user to manoeuvre around without hassel. Having the website in plain colour scheme, black text for good readability for users of all ages. 
 I thought of users who would be used to social media type of apps, while still giving the simplistic look of what you see, is what you get with the website. 
 My aim was to keep it neat and tidy, not too much to pull away from the fact that it is all about the cute dog images that are added to the site.
+
 ### Colour Scheme
 
 For the colours, I chose beige background, and kept the same coloir across all the different pages to keep persistence throughout the site.
@@ -34,7 +34,6 @@ For the fonts, I chose a friendly easily readable font. PT Sans stood out to me 
 - [PT Sans](https://fonts.google.com/specimen/PT+Sans) was used for the primary headers, titles and paragraph texts.
 
 ## User Stories
-
 
 ### New Site Users
 
@@ -66,47 +65,59 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ### Mobile Wireframes
 
+<details>
+<summary>Click here to see the Mobile Wireframes</summary>
+
 Home
-  - ![screenshot](documentation/home-mobile.png)
+    - ![screenshot](documentation/home-mobile.png)
 
 Add dog
-  - ![screenshot](documentation/add_dog-mobile.png)
+    - ![screenshot](documentation/add_dog-mobile.png)
 
 Add photo
-  - ![screenshot](documentation/add_photo-mobile.png)
+    - ![screenshot](documentation/add_photo-mobile.png)
 
 Competition
-  - ![screenshot](documentation/comp-mobile.png)
+    - ![screenshot](documentation/comp-mobile.png)
+</details>
   
-  ### Tablet Wireframes
-  
-  Home
-  - ![screenshot](documentation/home-tablet.png)
+### Tablet Wireframes
+
+<details>
+<summary>Click here to see the Tablet Wireframes</summary>
+
+Home
+    - ![screenshot](documentation/home-tablet.png)
 
 Add dog
-  - ![screenshot](documentation/add_dog-tablet.png)
+    - ![screenshot](documentation/add_dog-tablet.png)
 
 Add photo
-  - ![screenshot](documentation/add_photo-tablet.png)
+    - ![screenshot](documentation/add_photo-tablet.png)
 
 Competition
-  - ![screenshot](documentation/comp-tablet.png)
+    - ![screenshot](documentation/comp-tablet.png)
+
+</details>
+
+### Desktop Wireframes
+
+<details>
+<summary>Click here to see the Desktop Wireframes</summary>
   
-    ### Desktop Wireframes
-  
-  Home
-  - ![screenshot](documentation/home-desktop.png)
+Home
+    - ![screenshot](documentation/home-desktop.png)
 
 Add dog
-  - ![screenshot](documentation/add_dog-desktop.png)
+    - ![screenshot](documentation/add_dog-desktop.png)
 
 Add photo
-  - ![screenshot](documentation/add_photo-desktop.png)
+    - ![screenshot](documentation/add_photo-desktop.png)
 
 Competition
-  - ![screenshot](documentation/comp-desktop.png)
+    - ![screenshot](documentation/comp-desktop.png)
 
-
+</details>
 
 ## Features
 
