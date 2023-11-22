@@ -10,7 +10,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | --- | --- | --- | --- |
 | Home | [W3C](https://validator.w3.org/nu/#textarea) | ![screenshot](documentation/html-validation-home.png) |Pass: No Errors |
 | Add Dog | [W3C](https://validator.w3.org/nu/#textarea) | ![screenshot](documentation/html-validation-add-dog.png) | Pass: No Errors |
-| Add Photo | [W3C](https://validator.w3.org/nu/#textarea) | ![screenshot](documentation/html-validation-add-photo.png) | Pass: No Errors |
+| Add Photo | [W3C](https://validator.w3.org/nu/#textarea) | ![screenshot](documentation/html-validation-add-dog-photo.png) | Pass: No Errors |
 | Competition | [W3C](https://validator.w3.org/nu/#textarea)| ![screenshot](documentation/html-validation-comp.png) | Pass: no Errors |
 
 ### CSS
@@ -45,7 +45,6 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 | Browser | Home | About | Contact | etc | Notes |
 | --- | --- | --- | --- | --- | --- |
-| ![Chrome](https://raw.githubusercontent.com/TravelTimN/markdown-builder/main/assets/img/chrome.png) | ![screenshot](documentation/chrome-browser-home.png) | ![screenshot](documentation/chrome-browser-add-dog.png) | ![screenshot](documentation/chrome-browser-add-photo.png) | ![screenshot](documentation/chrome-browser-competition.png) | Works as expected |
 | ![Firefox](https://raw.githubusercontent.com/TravelTimN/markdown-builder/main/assets/img/firefox.png) | ![screenshot](documentation/firefox-browser-home.png) | ![screenshot](documentation/firefox-browser-add-dog.png) | ![screenshot](documentation/firefox-browser-add-photo.png) | ![screenshot](documentation/firefox-browser-comp.png) | Works as expected |
 | ![Safari](https://raw.githubusercontent.com/TravelTimN/markdown-builder/main/assets/img/safari.png) | ![screenshot](documentation/safari-browser-home.png) | ![screenshot](documentation/safari-browser-add-dog.png) | ![screenshot](documentation/safari-browser-add-photo.png) | ![screenshot](documentation/safari-browser-comp.png) | Minor CSS differences |
 | ![Opera](https://raw.githubusercontent.com/TravelTimN/markdown-builder/main/assets/img/opera.png) | ![screenshot](documentation/opera-browser-home.png) | ![screenshot](documentation/opera-browser-add-dog.png) | ![screenshot](documentation/opera-browser-add-photo.png) | ![screenshot](documentation/opera-browser-comp.png) | Worked as expected |
@@ -76,7 +75,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page | User Action | Expectation | Result |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | Navabr | | | | |
 | | Click on logo | Redirect to home page |  Passed 
 | | Click dropdown | Show three other pages | Passed
